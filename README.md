@@ -48,7 +48,7 @@ Unified Source of Truth: This table was integrated with the transactional data v
 ## Dashboard Overview
 
 **Page 1: Logistics Performance**
-![Page 1]([Resilient-Sync-Supply-Chain/page1.png](https://github.com/Tooba-Analytics/Resilient-Sync-Supply-Chain/blob/main/page1.png))
+![Page 1]("C:\Resilient-Sync-Supply-Chain\dashboard\page1.png")
 
 **Page 2: Risk & Financial Exposure**
 ![Page 2](dashboard/page2.png)
