@@ -48,13 +48,13 @@ Unified Source of Truth: This table was integrated with the transactional data v
 ## Dashboard Overview
 
 **Page 1: Logistics Performance**
-![Page 1](dashboard/page1.png)
+[Page 1](dashboard/page1.png)
 
 **Page 2: Risk & Financial Exposure**
-![Page 2](dashboard/page2.png)
+[Page 2](dashboard/page2.png)
 
 **Page 3: Strategic Roadmap**
-![Page 3](dashboard/page3.png)
+[Page 3](dashboard/page3.png)
 
 
 ### 📂 Data Source
