@@ -3,7 +3,21 @@
 Resilient-Sync is a high-impact analytical framework developed to solve complex supply chain inefficiencies. By architecting an end-to-end pipeline that bridges operational data with environmental and geopolitical risk models, this project provides a prescriptive solution for logistics optimization, achieving a 4x improvement over baseline efficiency benchmarks.
 
 ## 🛠 Technical Architecture
-**Data Engineering (Python):** Engineered a robust data pipeline using Pandas and NumPy. Implemented deterministic synthetic data generation (using np.random.seed(42)) to simulate multi-variable disruption scenarios (Weather, Geopolitics, Port Congestion).
+**Data Engineering & Synthetic Simulation (Python)**
+To simulate real-world volatility, I built a custom Python pipeline that generates probabilistic disruption scenarios.
+
+Probabilistic Matrix: Using np.random.choice with weighted probabilities, I simulated five environmental conditions (ranging from 'Clear Sky' to 'Port Congestion').
+
+Deterministic Simulation: Implemented np.random.seed(42) to ensure the reproducibility of the disruption scenarios during analysis.
+
+Impact Mapping: Created a custom function (calculate_operational_impact) to correlate weather conditions with Weather_Delay_Days and Risk_Severity (Low/Medium/High), providing a quantitative basis for risk assessment.
+
+**Geopolitical Intelligence Integration**
+I curated a master Geopolitical_data.csv table that maps regional chokepoints to operational risks.
+
+Strategic Mapping: Each Port_Region is mapped to a Geopolitical_Risk_Score and an Alternative_Route_Penalty_Cost.
+
+Unified Source of Truth: This table was integrated with the transactional data via PostgreSQL, allowing for cross-regional risk analysis and "Impact-vs-Ease" mitigation planning in the dashboard.
 
 **Database Management (PostgreSQL):** Designed a relational model to integrate disparate datasets. Executed complex CTEs (Common Table Expressions) and JOIN operations to create a unified source of truth for supply chain performance.
 
