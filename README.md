@@ -42,6 +42,12 @@ Resilient-Sync is a high-impact analytical framework developed to solve complex 
 **Page 3: Strategic Roadmap**
 ![Page 3](dashboard/page3.png)
 
+
+### 📂 Data Source
+The dataset used for this project is sourced from Kaggle. You can access it here: 
+[Click here to view the DataCo Supply Chain Dataset](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
+
+
 ## ⚙️ Prerequisites & Setup
 
 Ensure you have Python 3.x and PostgreSQL installed.
