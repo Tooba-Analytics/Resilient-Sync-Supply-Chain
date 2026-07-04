@@ -3,27 +3,41 @@
 Resilient-Sync is a high-impact analytical framework developed to solve complex supply chain inefficiencies. By architecting an end-to-end pipeline that bridges operational data with environmental and geopolitical risk models, this project provides a prescriptive solution for logistics optimization, achieving a 4x improvement over baseline efficiency benchmarks.
 
 ## 🛠 Technical Architecture
-**Data Engineering & Synthetic Simulation (Python)**
-To simulate real-world volatility, I built a custom Python pipeline that generates probabilistic disruption scenarios.
+### Data Engineering & Synthetic Simulation (Python)
 
-Probabilistic Matrix: Using np.random.choice with weighted probabilities, I simulated five environmental conditions (ranging from 'Clear Sky' to 'Port Congestion').
+**Pipeline Development:** Architected a custom Python pipeline, weather_simulator.py, to simulate real-world supply chain volatility.
 
-Deterministic Simulation: Implemented np.random.seed(42) to ensure the reproducibility of the disruption scenarios during analysis.
+**Probabilistic Matrix:** Utilized np.random.choice with weighted probabilities to simulate five distinct environmental conditions, ranging from 'Clear Sky' to 'Port Congestion Due to Storm'.
 
-Impact Mapping: Created a custom function (calculate_operational_impact) to correlate weather conditions with Weather_Delay_Days and Risk_Severity (Low/Medium/High), providing a quantitative basis for risk assessment.
+**Deterministic Reproducibility:** Implemented np.random.seed(42) to ensure that all generated disruption scenarios remain reproducible across different analytical runs.
 
-**Geopolitical Intelligence Integration**
-I curated a master Geopolitical_data.csv table that maps regional chokepoints to operational risks.
+**Impact Mapping:** Engineered the calculate_operational_impact function to quantitatively correlate weather variables with Weather_Delay_Days and Risk_Severity (Low/Medium/High).
 
-Strategic Mapping: Each Port_Region is mapped to a Geopolitical_Risk_Score and an Alternative_Route_Penalty_Cost.
+### Geopolitical Intelligence Integration
 
-Unified Source of Truth: This table was integrated with the transactional data via PostgreSQL, allowing for cross-regional risk analysis and "Impact-vs-Ease" mitigation planning in the dashboard.
+**Dataset Curation:** Curated a Geopolitical_data.csv master table by manually mapping critical global chokepoints to operational risk profiles.
 
-**Database Management (PostgreSQL):** Designed a relational model to integrate disparate datasets. Executed complex CTEs (Common Table Expressions) and JOIN operations to create a unified source of truth for supply chain performance.
+**Strategic Mapping:** Linked every Port_Region with a proprietary Geopolitical_Risk_Score and Alternative_Route_Penalty_Cost to quantify the financial impact of regional tensions.
 
-**Decision Intelligence (Power BI):** Developed a dynamic dashboard utilizing DAX-driven analytics. The visualization layer features an Impact-versus-Ease Matrix to prioritize risk-mitigation initiatives effectively.
+**Unified Source of Truth:** Integrated this intelligence into the PostgreSQL pipeline using sql_script_for_resilient_sync.sql, enabling cross-regional risk analysis and data-backed mitigation planning.
+
+### Database Management (PostgreSQL)
+
+**Relational Schema Design:** Designed a robust relational model to harmonize disparate transactional datasets with external weather and geopolitical logs.
+
+**Unified View Creation:** Executed complex Common Table Expressions (CTEs) within sql_script_for_resilient_sync.sql to de-duplicate and join datasets, creating the UNIFIED_SUPPLY_CHAIN_ANALYSIS view.
+
+**Data Integrity & Audits:** Implemented automated validation scripts to identify unmapped regional names and ensure 100% data fidelity by comparing row counts between the source and the final analytical view.
+
+### Decision Intelligence (Power BI)
+
+**DAX-Driven Analytics:** Developed a dynamic, multi-page dashboard utilizing advanced DAX measures to visualize supply chain performance and shipping delay variances.
+
+**Strategic Prioritization:** Built an "Impact-versus-Ease" Matrix, providing stakeholders with a clear framework to prioritize high-value risk-mitigation initiatives based on the integrated dataset.
+
 
 ## 📊 Strategic Performance Insights
+
 ### 1. Operational Bottlenecks
 **Fulfillment Health:** Current 45.18 Overall Health Score identifies systemic inefficiencies.
 
